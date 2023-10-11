@@ -21,7 +21,7 @@ export default function Input({
          
           value={amount}
           onChange={(e) =>
-            onamountchange && onamountchange(Number(e.target.value))
+            onamountchange && e.target.value!=0 && onamountchange(Number(e.target.value))
           }
           disabled={Disabled}
         />
