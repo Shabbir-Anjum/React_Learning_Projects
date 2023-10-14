@@ -3,7 +3,7 @@ function App() {
 
   return (
     <>
-    <p className='bg-black text-white'>dfdfds</p>
+    <p className='bg-black text-white tex'>dfdfds</p>
     </>
   )
 }
