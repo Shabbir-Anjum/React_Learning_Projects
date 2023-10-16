@@ -6,39 +6,18 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 import Home from './Home/Home.jsx'
 import About from './About/About.jsx'
-
-
-
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Layout/>,
-//     children: [
-//       {
-//         path: "",
-//         element: <Home />
-//       },
-//       {
-//         path: "about",
-//         element: <About />
-//       },
-//       {
-//         path: "contact",
-//         element: <Contact />
-//       }
-//     ]
-//   }
-// ])
+import Contact from './Contact/Contact.jsx'
+import Github, { GithubAPI } from './Github/Github.jsx'
+import User from './Home/User.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route path='' element={<Home />} />
-      <Route path='about' element={<About />} />
-      
-    
-     
+      <Route path='/about' element={<About />} />
+      <Route path='/contact' element={ <Contact/>}/>
+      <Route loader={GithubAPI} path='/github' element={ <Github/> }/>
+     <Route path='user/:userid' element={<User/>}/>
     </Route>
   )
 )
