@@ -1,4 +1,6 @@
+import Footer from "./Footer/Footer"
 import Header from "./Header/Header"
+import {Outlet} from 'react-router-dom'
 
 function App() {
 
@@ -6,8 +8,8 @@ function App() {
   return (
     <>
     <Header/>
-    <p className='bg-black text-white tex'>dfdfds</p>
-
+    <Outlet/>
+    <Footer/>
     </>
   )
 }
