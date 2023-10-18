@@ -5,9 +5,11 @@ import './index.css'
 import Provider from './Context/Provider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider>
+ 
   <React.StrictMode>
+     <Provider>
     <App />
+    </Provider>
   </React.StrictMode>,
-  </Provider>
+ 
 )
