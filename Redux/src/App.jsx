@@ -7,9 +7,10 @@ function App() {
 
   return (
     <>
+    <div className="items-center">
     <Addtodo/>
     <Todos/>
-  
+    </div>
     </>
   )
 }

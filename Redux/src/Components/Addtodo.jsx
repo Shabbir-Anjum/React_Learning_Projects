@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import { addTodo } from '../Features/Todo/TodoSlice'
+import { DeleteAllTodo, addTodo, removeTodo, updateTodo } from '../Features/Todo/TodoSlice'
 
 
 function AddTodo() {
@@ -11,7 +11,17 @@ function AddTodo() {
         dispatch(addTodo(input));
         setInput("")
     }
+    const updateTodoF=(e)=>{
+      e.preventDefault();
+      dispatch(updateTodo(input))
+    }
+    const DeleteAll=()=>{
+    dispatch(DeleteAllTodo(input))
+    }
   return (
+    <>
+    <div className='flex items-center justify-center'>
+    <div>
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
         type="text"
@@ -26,7 +36,25 @@ function AddTodo() {
       >
         Add Todo
       </button>
+      
     </form>
+    </div>
+    <div>
+    <button
+        onClick={updateTodoF}
+        className="text-white mt-12 bg-indigo-500 border-0 py-2 px-6 mx-4 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+      >
+        Update
+      </button>
+      <button
+        onClick={DeleteAll}
+        className="text-white mt-12 bg-indigo-500 border-0 py-2 px-6 mx-4 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+      >
+        Delete All
+      </button>
+      </div>
+      </div>
+    </>
   )
 }
 
