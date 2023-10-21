@@ -11,12 +11,18 @@ function AddTodo() {
         dispatch(addTodo(input));
         setInput("")
     }
-    const updateTodoF=(e)=>{
-      e.preventDefault();
-      dispatch(updateTodo(input))
+    const updateTodoF = () => {
+      const idToUpdate = prompt('Enter the ID of the todo to update:');
+      const updatedText = prompt('Enter the updated text:');
+      console.log("fsdfdfsdf")
+    
+      if (idToUpdate && updatedText) {
+        dispatch(updateTodo({ id: idToUpdate, text: updatedText }));
+      }
     }
+    
     const DeleteAll=()=>{
-    dispatch(DeleteAllTodo(input))
+    dispatch(DeleteAllTodo())
     }
   return (
     <>
