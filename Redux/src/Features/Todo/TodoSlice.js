@@ -19,13 +19,11 @@ export const TodoSlice = createSlice({
         },
         updateTodo: (state, action) => {
             const { id, text } = action.payload;
-            const todoToUpdate = state.todos.find((todo) => todo.id === id);
+            state.todos.find((todo) => {if(todo.id === id){state.todos.text = text;
+                console.log(state.todos.text)}});
            
           
-            if (todoToUpdate) {
-              todoToUpdate.text = text;
-              console.log(todoToUpdate.text)
-            }
+           
           },
           
         DeleteAllTodo: (state,action)=>{
