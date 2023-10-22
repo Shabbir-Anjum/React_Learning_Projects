@@ -35,8 +35,11 @@ function Todos() {
                 />
               </svg>
             </button>
+        
           </li>
+          
         ))}
+      
       </ul>
     </>
   )
