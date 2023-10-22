@@ -1,35 +1,20 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import { DeleteAllTodo, addTodo, removeTodo, updateTodo } from '../Features/Todo/TodoSlice'
+import { addTodo } from '../Features/Todo/TodoSlice'
 
 
 function AddTodo() {
-    const [input, setInput]= useState('');
-    const dispatch= useDispatch()
-    const addTodoHandler =(e)=>{
-        e.preventDefault();
-        dispatch(addTodo(input));
-        setInput("")
+
+    const [input, setInput] = useState('')
+    const dispatch = useDispatch()
+
+    const addTodoHandler = (e) => {
+        e.preventDefault()
+        dispatch(addTodo(input))
+        setInput('')
     }
-    const updateTodoF = (e) => {
-      e.preventDefault();
-      const idToUpdate = prompt('Enter the ID of the todo to update:');
-      const updatedText = prompt('Enter the updated text:');
-      
-    
-      if (idToUpdate && updatedText) {
-        dispatch(updateTodo({ id: idToUpdate, text: updatedText }));
-        console.log("good")
-      }
-    }
-    
-    const DeleteAll=()=>{
-    dispatch(DeleteAllTodo())
-    }
+
   return (
-    <>
-    <div className='flex items-center justify-center'>
-    <div>
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
         type="text"
@@ -44,25 +29,7 @@ function AddTodo() {
       >
         Add Todo
       </button>
-      
     </form>
-    </div>
-    <div>
-    <button
-        onClick={updateTodoF}
-        className="text-white mt-12 bg-indigo-500 border-0 py-2 px-6 mx-4 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-      >
-        Update
-      </button>
-      <button
-        onClick={DeleteAll}
-        className="text-white mt-12 bg-indigo-500 border-0 py-2 px-6 mx-4 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-      >
-        Delete All
-      </button>
-      </div>
-      </div>
-    </>
   )
 }
 
