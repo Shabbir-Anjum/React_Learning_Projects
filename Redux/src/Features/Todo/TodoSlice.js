@@ -23,6 +23,7 @@ export const todoSlice = createSlice({
         DeleteAll:(state, action)=>{
             state.todos=[]
         }
+       
     }
 })
 
