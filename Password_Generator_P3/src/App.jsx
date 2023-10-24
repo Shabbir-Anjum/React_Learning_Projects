@@ -112,7 +112,7 @@ function App() {
         className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'
         >Past</button>
     </div>
-        <p className='text-white text-sm'>Text: {value}</p>
+        <p className='text-white text-sm'>Data: {value}</p>
 
 </div>
     
