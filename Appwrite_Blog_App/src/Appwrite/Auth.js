@@ -1,5 +1,6 @@
-import Config from "../Configure/config";
 
+import Config from "../Configure/config";
+import { Client, Account, ID} from 'appwrite';
 export class Authservice{
     client= new Client();
     account;
@@ -34,6 +35,13 @@ export class Authservice{
         } catch (error) {
             throw error
         }
+    }
+    async logout(){
+       try {
+        return await this.account.deleteSessions()
+       } catch (error) {
+        throw error
+       }
     }
 };
 const authservice = new Authservice()
