@@ -40,13 +40,34 @@ export class Service {
             
         }
     }
-    async allpost(queries= Query('status', 'active')){
+    async allpost(queries= Query.equal('status', 'active')){
         try {
             return await this.databases.listDocuments(Config.Database_id, Config.Collection_id, queries)
         } catch (error) {
             return false
         }
     }
+
+    async uplaodfile(file){
+        try {
+            return await this.bucket.createFile(Config.Bucket_id, ID.unique(), file)
+        } catch (error) {
+            return false
+        }
+    }
+    getfile(fileid){
+        return this.bucket.getFilePreview(Config.Bucket_id, fileid)
+    }
+    async deletefile(fileid){
+        try {
+            return await this.bucket.deleteFile(Config.Bucket_id, fileid)
+        } catch (error) {
+            return false
+        }
+    }
 }
+  
+
+
 const service = new Service()
 export default service
