@@ -1,10 +1,16 @@
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import authservice from "./Appwrite/Auth"
 
 function App() {
-
-
+const [loading, setloading]= useState(true);
+const dispatch= useDispatch()
+useEffect(()=>{
+  authservice.currentUser()
+},[])
   return (
-    <>gfgfg
-     {import.meta.env.VITE_APPWRITE_URL}
+    <>
+    vbvb
     </>
   )
 }
