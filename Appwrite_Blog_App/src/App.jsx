@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import authservice from "./Appwrite/Auth";
 import { login, logout } from "./Store/AuthSlice";
+import { Header, Footer } from "./Components";
+import { Outlet } from "react-router-dom";
 function App() {
   const [loading, setloading] = useState(true);
   const dispatch = useDispatch();
@@ -12,10 +14,18 @@ function App() {
       } else {
         dispatch(logout())
       }
-    }).finally(setloading(false))
+    }).finally(()=> setloading(false))
   }, []);
   return !loading ? (
-    <div className=" "></div>
+    <div className=" min-h-screen flex flex-wrap content-between bg-gray-700">
+      <div className=" w-full block">
+        <Header/>
+        <main>
+          {/* <Outlet/> */}
+        </main>
+        <Footer/>
+      </div>
+    </div>
   ) : null
 }
 

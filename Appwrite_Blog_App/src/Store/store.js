@@ -2,3 +2,4 @@ import { configureStore } from "@reduxjs/toolkit";
  const store = configureStore({
     reducer:gfhjfgh
  })
+ export default store;
