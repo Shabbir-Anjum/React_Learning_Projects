@@ -5,7 +5,7 @@ export default function User() {
     const {userid}=useParams()
   return (
     <div>
-      Shabbir Anjum {userid} 
+      Shabbir {userid} 
     </div>
   )
 }
