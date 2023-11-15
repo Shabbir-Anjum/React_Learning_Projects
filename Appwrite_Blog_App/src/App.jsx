@@ -23,6 +23,9 @@ function App() {
         <main>
           {/* <Outlet/> */}
         </main>
+        <main>
+          {/* <Outlet/> */}
+        </main>
         <Footer/>
       </div>
     </div>
