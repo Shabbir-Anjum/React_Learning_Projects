@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { DeleteAll, addTodo } from "../Features/Todo/TodoSlice";
 
-function AddTodo() {
+function AddTodo() { 
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-
+  const disatch = useDispatch();
   const addTodoHandler = (e) => {
     e.preventDefault();
     dispatch(addTodo(input));
