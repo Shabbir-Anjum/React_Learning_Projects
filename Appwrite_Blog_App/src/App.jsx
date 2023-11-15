@@ -14,7 +14,7 @@ function App() {
       } else {
         dispatch(logout())
       }
-    }).finally(()=> setloading(false))
+    }).finally(()=> setloading(true))
   }, []);
   return !loading ? (
     <div className=" min-h-screen flex flex-wrap content-between bg-gray-700">
