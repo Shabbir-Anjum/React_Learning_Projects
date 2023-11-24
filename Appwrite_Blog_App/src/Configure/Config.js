@@ -5,4 +5,5 @@ const Config={
    Collection_id:String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
    Bucket_id: String(import.meta.env.VITE_APPWRITE_BUCKET_ID)
 }
+
 export default Config
