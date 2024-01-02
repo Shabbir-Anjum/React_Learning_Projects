@@ -20,6 +20,7 @@ export class Service {
         try {
             return await this.databases.updateDocument(Config.Database_id, Config.Collection_id, slug, {title, content, featuredimage, status})
         } catch (error) {
+            
             throw error
         }
     }
