@@ -54,7 +54,6 @@ let t='text-yellow-700';
      </p>
      <input type="checkbox" onChange={()=>{setdata((prev)=> !prev)} }/> */}
      <Todo/>
-
     </div>
   )
 }
