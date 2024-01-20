@@ -2,8 +2,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
 import Todo from './Todo'
+import data from './API/data';
 
 function App() {
+  const [text, settext]= useState(' ')
+  let cdata=data(text)
+  let kes= Object.keys(cdata)
+  let val= Object.values(cdata)
+
+  console.log(kes)
   //const [colors, setcolors]= useState('red')
 // const [value, setvallue]= useState(null);
 // const valuechange=()=>{
@@ -15,7 +22,7 @@ function App() {
 // }
 // const [length, setlength]= useState(2)
 // const [data, setdata]= useState(true)
-// const [text, settext]= useState(' ')
+
 // const refe= useRef()
 // const passwordG= useCallback(()=>{
 //   let str='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -42,7 +49,8 @@ function App() {
 
 let t='text-yellow-700';
   return (
-    <div className={` ${t} h-screen`}>
+    <div className={` ${t} bg-orange-100 h-screen`}>
+      <input type="text" value={text} onChange={(e)=>{settext(e.target.value)}} />
     {/* <Todo color={chnageC}/> */}
       {/* <p>{value}</p>
       <button onClick={valuechange}>Update</button> */}
@@ -53,7 +61,21 @@ let t='text-yellow-700';
       text={text}
      </p>
      <input type="checkbox" onChange={()=>{setdata((prev)=> !prev)} }/> */}
-     <Todo/>
+  {/* <Todo/> */}
+  <select name="a" id="s">
+  {kes.map((res)=>(
+  
+      <option key={res} value={res}>{res}</option>
+    
+  ))}
+  </select>
+  <select name="a" id="s">
+  {val.map((res)=>(
+  
+      <option key={res} value={res}>{res}</option>
+    
+  ))}
+  </select>
     </div>
   )
 }
