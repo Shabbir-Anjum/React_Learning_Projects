@@ -5,12 +5,14 @@ import Todo from './Todo'
 import data from './API/data';
 
 function App() {
-  const [text, settext]= useState(' ')
+  let [text, settext]= useState('pkr')
+  let [currency, setcurrency]=useState('')
   let cdata=data(text)
-  let kes= Object.keys(cdata)
-  let val= Object.values(cdata)
-
-  console.log(kes)
+    let kes= Object.keys(cdata)
+    let val= Object.values(cdata)
+  const change= ()=>{
+    setcurrency(text)
+  }
   //const [colors, setcolors]= useState('red')
 // const [value, setvallue]= useState(null);
 // const valuechange=()=>{
@@ -51,6 +53,7 @@ let t='text-yellow-700';
   return (
     <div className={` ${t} bg-orange-100 h-screen`}>
       <input type="text" value={text} onChange={(e)=>{settext(e.target.value)}} />
+      <button onClick={change}>Change</button>
     {/* <Todo color={chnageC}/> */}
       {/* <p>{value}</p>
       <button onClick={valuechange}>Update</button> */}
