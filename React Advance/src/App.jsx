@@ -3,16 +3,19 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
 import Todo from './Todo'
 import data from './API/data';
-
+import Todon from './Todon';
 function App() {
-  let [text, settext]= useState('pkr')
-  let [currency, setcurrency]=useState('')
-  let cdata=data(text)
-    let kes= Object.keys(cdata)
-    let val= Object.values(cdata)
-  const change= ()=>{
-    setcurrency(text)
-  }
+
+  // let [todo, settodo]=useState(['1st'])
+  // let [value, setvalue]= useState(1)
+  // let [text, settext]= useState('pkr')
+  // let [currency, setcurrency]=useState('')
+  // let cdata=data(text)
+  //   let kes= Object.keys(cdata)
+  //   let val= Object.values(cdata)
+  // const change= ()=>{
+  //   setcurrency(text)
+  // }
   //const [colors, setcolors]= useState('red')
 // const [value, setvallue]= useState(null);
 // const valuechange=()=>{
@@ -48,11 +51,18 @@ function App() {
 // useEffect(
 //  ()=>{passwordG()}
 //   ,[length])
-
+// const addtodo=setTimeout(() => {
+//   settodo((prev)=>[...prev, 'new'])
+  
+// }, 3000);
+// clearTimeout(addtodo)
+// const addvalue=()=>{
+//   setvalue(value + 1)
+// }
 let t='text-yellow-700';
   return (
     <div className={` ${t} bg-orange-100 h-screen`}>
-      <input type="text" value={text} onChange={(e)=>{settext(e.target.value)}} />
+      {/* <input type="text" value={text} onChange={(e)=>{settext(e.target.value)}} />
       <button onClick={change}>Change</button>
     {/* <Todo color={chnageC}/> */}
       {/* <p>{value}</p>
@@ -65,7 +75,7 @@ let t='text-yellow-700';
      </p>
      <input type="checkbox" onChange={()=>{setdata((prev)=> !prev)} }/> */}
   {/* <Todo/> */}
-  <select name="a" id="s">
+  {/* <select name="a" id="s">
   {kes.map((res)=>(
   
       <option key={res} value={res}>{res}</option>
@@ -78,7 +88,11 @@ let t='text-yellow-700';
       <option key={res} value={res}>{res}</option>
     
   ))}
-  </select>
+  </select> */}
+  {/* <Todon todo={todo} todoadd={addtodo}/>
+ <div>countvalue {value}</div>
+ <button onClick={addvalue}>btn</button> */}
+<Todon/>
     </div>
   )
 }
