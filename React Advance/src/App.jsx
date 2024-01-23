@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
 import Todo from './Todo'
 import data from './API/data';
-import Todon from './Todon';
+import Drop from './Drop';
+import Delete from './Delete';
 function App() {
 
   // let [todo, settodo]=useState(['1st'])
@@ -92,7 +93,10 @@ let t='text-yellow-700';
   {/* <Todon todo={todo} todoadd={addtodo}/>
  <div>countvalue {value}</div>
  <button onClick={addvalue}>btn</button> */}
-<Todon/>
+{/* <Todon/> */}
+
+{/* <Drop/> */}
+<Delete/>
     </div>
   )
 }
