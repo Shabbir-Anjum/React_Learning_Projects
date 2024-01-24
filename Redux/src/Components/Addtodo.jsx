@@ -5,7 +5,6 @@ import { DeleteAll, addTodo } from "../Features/Todo/TodoSlice";
 function AddTodo() { 
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-  const disatch = useDispatch();
   const addTodoHandler = (e) => {
     e.preventDefault();
     dispatch(addTodo(input));

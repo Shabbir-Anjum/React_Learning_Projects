@@ -22,11 +22,14 @@ export const todoSlice = createSlice({
         },
         DeleteAll:(state, action)=>{
             state.todos=[]
+        },
+        update:(state,action)=>{
+            
         }
        
     }
 })
 
-export const {addTodo, removeTodo, DeleteAll} = todoSlice.actions
+export const {addTodo, removeTodo, DeleteAll,update} = todoSlice.actions
 
 export default todoSlice.reducer
