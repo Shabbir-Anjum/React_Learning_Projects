@@ -15,7 +15,8 @@ export default function Delete() {
                     <button onClick={()=>{setarr(arr.filter((_,e)=>e!==index))}}>Delete</button>
                 </ul>
                 <span>
-                    <div>dfdfs</div>
+
+                    <div>Data</div>
                 </span>
              </div>
             ) )}

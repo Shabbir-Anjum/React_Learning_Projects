@@ -5,6 +5,7 @@ import Todo from './Todo'
 import data from './API/data';
 import Drop from './Drop';
 import Delete from './Delete';
+import GameD from './Game/GameD';
 function App() {
 
   // let [todo, settodo]=useState(['1st'])
@@ -96,7 +97,8 @@ let t='text-yellow-700';
 {/* <Todon/> */}
 
 {/* <Drop/> */}
-<Delete/>
+{/* <Delete/> */}
+<GameD/>
     </div>
   )
 }
